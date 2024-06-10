@@ -38,26 +38,33 @@ class MainActivity : AppCompatActivity() {
         val bt_kor =findViewById<Button>(R.id.bt_kor)
         val bt_eng =findViewById<Button>(R.id.bt_eng)
         val bt_pro =findViewById<Button>(R.id.bt_pro)
-        bt_mt.setOnClickListener(){
-            var tv = findViewById<TextView>(R.id.tv_mt_time)
-            var mt_sec:Int =0
-            var mt_min:Int = 0
-            var mt_hr:Int = 0
-            mTimer = timer(period = 1000){
-                mt_sec++
-                if(mt_sec > 60){
-                    mt_sec = 0
-                    mt_min++
-                }
-                else if(mt_min >60){
-                    mt_min = 0
-                    mt_hr++
-                }
-                runOnUiThread(){
-                    tv.text=String.format("%02d:%02d:%02d",mt_hr,mt_min,mt_sec)
+        var isRunning = false
+        var tv = findViewById<TextView>(R.id.tv_mt_time)
+        var mt_sec:Int =0
+        var mt_min:Int = 0
+        var mt_hr:Int = 0
+        bt_mt.setOnClickListener() {
+            isRunning = !isRunning
+            if (isRunning == true) {
+                mTimer = timer(period = 1000) {
+                    mt_sec++
+                    if (mt_sec > 60) {
+                        mt_sec = 0
+                        mt_min++
+                    } else if (mt_min > 60) {
+                        mt_min = 0
+                        mt_hr++
+                    }
+                    runOnUiThread() {
+                        tv.text = String.format("%02d:%02d:%02d", mt_hr, mt_min, mt_sec)
+                    }
                 }
             }
+            else{
+                mTimer.cancel()
+            }
         }
+
     }
 
 
