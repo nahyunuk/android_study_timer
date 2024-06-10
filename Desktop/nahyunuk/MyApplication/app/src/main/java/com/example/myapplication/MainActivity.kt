@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -7,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Timer
 import kotlin.concurrent.timer
+import android.graphics.Color
 
 class MainActivity : AppCompatActivity() {
     lateinit var mTimer : Timer
@@ -32,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+    @SuppressLint("SuspiciousIndentation")
     fun main() {
         setContentView(R.layout.activity_main)
         val bt_mt = findViewById<Button>(R.id.bt_mt)
@@ -62,6 +65,10 @@ class MainActivity : AppCompatActivity() {
             bt_mt.setOnClickListener() {
                 isRunning = !isRunning
                 if (isRunning == true) {
+                    bt_mt.setBackgroundColor(Color.RED)
+                    bt_kor.setBackgroundColor(Color.GREEN)
+                    bt_eng.setBackgroundColor(Color.GREEN)
+                    bt_pro.setBackgroundColor(Color.GREEN)
                     mTimer = timer(period = 1000) {
                         mt_sec++
                         if (mt_sec > 60) {
@@ -76,12 +83,20 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else {
+                    bt_mt.setBackgroundColor(Color.GREEN)
+                    bt_kor.setBackgroundColor(Color.GREEN)
+                    bt_eng.setBackgroundColor(Color.GREEN)
+                    bt_pro.setBackgroundColor(Color.GREEN)
                     mTimer.cancel()
                 }
             }
             bt_kor.setOnClickListener() {
                 isRunning = !isRunning
                 if (isRunning == true) {
+                    bt_mt.setBackgroundColor(Color.GREEN)
+                    bt_kor.setBackgroundColor(Color.RED)
+                    bt_eng.setBackgroundColor(Color.GREEN)
+                    bt_pro.setBackgroundColor(Color.GREEN)
                     mTimer = timer(period = 1000) {
                         kor_sec++
                         if (kor_sec > 60) {
@@ -97,12 +112,20 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else {
+                    bt_mt.setBackgroundColor(Color.GREEN)
+                    bt_kor.setBackgroundColor(Color.GREEN)
+                    bt_eng.setBackgroundColor(Color.GREEN)
+                    bt_pro.setBackgroundColor(Color.GREEN)
                     mTimer.cancel()
                 }
             }
             bt_eng.setOnClickListener() {
                 isRunning = !isRunning
                 if (isRunning == true) {
+                    bt_mt.setBackgroundColor(Color.GREEN)
+                    bt_kor.setBackgroundColor(Color.GREEN)
+                    bt_eng.setBackgroundColor(Color.RED)
+                    bt_pro.setBackgroundColor(Color.GREEN)
                     mTimer = timer(period = 1000) {
                         eng_sec++
                         if (eng_sec > 60) {
@@ -118,12 +141,20 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else {
+                    bt_mt.setBackgroundColor(Color.GREEN)
+                    bt_kor.setBackgroundColor(Color.GREEN)
+                    bt_eng.setBackgroundColor(Color.GREEN)
+                    bt_pro.setBackgroundColor(Color.GREEN)
                     mTimer.cancel()
                 }
             }
             bt_pro.setOnClickListener() {
                 isRunning = !isRunning
                 if (isRunning == true) {
+                    bt_mt.setBackgroundColor(Color.GREEN)
+                    bt_kor.setBackgroundColor(Color.GREEN)
+                    bt_eng.setBackgroundColor(Color.GREEN)
+                    bt_pro.setBackgroundColor(Color.RED)
                     mTimer = timer(period = 1000) {
                         pro_sec++
                         if (pro_sec > 60) {
@@ -139,6 +170,10 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else {
+                    bt_mt.setBackgroundColor(Color.GREEN)
+                    bt_kor.setBackgroundColor(Color.GREEN)
+                    bt_eng.setBackgroundColor(Color.GREEN)
+                    bt_pro.setBackgroundColor(Color.GREEN)
                     mTimer.cancel()
                 }
             }
