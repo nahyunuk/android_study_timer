@@ -146,18 +146,10 @@ class MainActivity : AppCompatActivity() {
         var sec:Int =0;
         var min:Int = 0
         var hr:Int = 0
-        mTimer = timer(period = 1000){
+        mTimer = timer(period = 10){
             sec = mt_sec + kor_sec + eng_sec + pro_sec
-            min = mt_min + kor_min + eng_min + pro_min
-            hr = mt_hr + kor_hr + eng_hr + pro_hr
-            if(sec > 60){
-                sec %= 60
-                min =sec / 60
-            }
-            else if(min >60){
-                min %=60
-                hr =min / 60
-            }
+            min = eng_min + kor_min + pro_min + mt_min + ((mt_sec + kor_sec + eng_sec + pro_sec) / 60)
+            hr = eng_hr + kor_hr + mt_hr + pro_hr + ((eng_min + kor_min + pro_min + mt_min) / 60)
             runOnUiThread(){
                 tv.text=String.format("%02d:%02d:%02d",hr,min,sec)
             }
