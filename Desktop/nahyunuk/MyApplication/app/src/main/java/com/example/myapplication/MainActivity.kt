@@ -42,9 +42,18 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tv_all_time).text = String.format("%02d:%02d:%02d", hr, min, sec)
     }
 
+@SuppressLint("MissingInflatedId")
+fun calender() {
+    setContentView(R.layout.calender_main)
+    val bt_g_timer =findViewById<Button>(R.id.bt_g_timer)
+    bt_g_timer.setOnClickListener{
+        main()
+    }
+}
     @SuppressLint("SuspiciousIndentation")
     private fun main() {
         setContentView(R.layout.activity_main)
+        val bt_cl =findViewById<Button>(R.id.bt_cl)
         val bt_mt = findViewById<Button>(R.id.bt_mt)
         val bt_kor = findViewById<Button>(R.id.bt_kor)
         val bt_eng = findViewById<Button>(R.id.bt_eng)
@@ -135,6 +144,11 @@ class MainActivity : AppCompatActivity() {
                 stopTimer()
             }
         }
+
+        bt_cl.setOnClickListener {
+            calender()
+        }
+
 
 
     }

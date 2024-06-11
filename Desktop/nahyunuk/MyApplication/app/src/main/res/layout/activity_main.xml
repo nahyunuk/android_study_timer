@@ -8,27 +8,28 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:textAlignment="center"
-        android:gravity="center"
         android:id="@+id/tv_all_time"
         android:layout_width="400dp"
-        android:layout_height="40sp"
+        android:layout_height="80sp"
         android:layout_marginBottom="550dp"
+        android:gravity="center"
         android:text="00:00:00"
-        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:textAlignment="center"
-        android:gravity="center"
         android:id="@+id/tv_at"
         android:layout_width="400dp"
         android:layout_height="40sp"
-        android:layout_marginBottom="600dp"
+        android:layout_marginBottom="650dp"
+        android:gravity="center"
         android:text="총 시간"
-        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -202,6 +203,17 @@
         android:layout_marginStart="300dp"
         android:layout_marginBottom="-300dp"
         android:backgroundTint="#00FF00"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_cl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
