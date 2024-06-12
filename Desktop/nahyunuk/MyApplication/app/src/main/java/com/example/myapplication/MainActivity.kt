@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.Timer
 import kotlin.concurrent.timer
 import android.graphics.Color
+import android.widget.ImageButton
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mTimer: Timer
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 @SuppressLint("MissingInflatedId")
-fun calender() {
+        fun calender() {
     setContentView(R.layout.calender_main)
     val bt_g_timer =findViewById<Button>(R.id.bt_g_timer)
     bt_g_timer.setOnClickListener{
@@ -51,15 +52,19 @@ fun calender() {
     }
 }
     @SuppressLint("SuspiciousIndentation")
-    private fun main() {
+        private fun main() {
         setContentView(R.layout.activity_main)
-        val bt_cl =findViewById<Button>(R.id.bt_cl)
+        val bt_cl =findViewById<ImageButton>(R.id.bt_cl)
         val bt_mt = findViewById<Button>(R.id.bt_mt)
         val bt_kor = findViewById<Button>(R.id.bt_kor)
         val bt_eng = findViewById<Button>(R.id.bt_eng)
         val bt_pro = findViewById<Button>(R.id.bt_pro)
 
         var isRunning = false
+
+        updateTotalTime()
+
+
 
         bt_mt.setOnClickListener {
             isRunning = !isRunning
